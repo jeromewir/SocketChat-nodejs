@@ -1,0 +1,9 @@
+{
+  "name": "ACS",
+  "version": "0.0.1",
+  "description": "Server chat for Android app",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.2.0"
+  }
+}
