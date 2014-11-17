@@ -8,11 +8,12 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  socket.on('disconnect', function(socket) {
-
+  socket.on('disconnect', function() {
+    io.emit('userDisconnected', {author: socket.username});
   });
 
   socket.on('userConnected', function(username) {
+    socket.username = username;
     io.emit("userConnected", {author: username});
   });
 
