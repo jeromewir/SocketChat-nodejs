@@ -12,6 +12,10 @@ io.on('connection', function(socket) {
 
   });
 
+  socket.on('userConnected', function(username) {
+    io.emit("userConnected", {author: username});
+  });
+
   socket.on('userMsg', function(msg) {
     io.emit('serverMsg', msg);
   });
